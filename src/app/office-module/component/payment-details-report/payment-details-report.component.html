@@ -1,0 +1,97 @@
+<div class="card">
+    <div class="card-header p-2">
+      <h5 class="mb-0">PAYMENT DETAILS  REPORT</h5>
+    </div>
+    <div class="card-body">
+ 
+        <div class="col-md-12">
+            <button type="button" class="btn btn-success btn-sm pull-right" (click)="btnExcel()">
+                <i class="fa fa-file-excel-o mr-2" aria-hidden="true"></i>
+                Download Excel
+            </button>
+
+        </div>
+        <div  class="col-md-12 row"   > 
+             
+            <div class="table-responsive"  >
+        
+                <table  class="table table-striped ah-table text-center"
+                datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+
+                   <thead class="bg-success text-white" style="border: 1px solid white;">
+                       <tr>
+        
+                 
+                        <tr  >
+                            <th>S.NO</th>                  <th> PO NUMBER</th>                           <th> PO DATE</th> 
+                            <th> INVOICE NUMBER</th>          <th> INVOICE DATE</th>                           <th> INVOICE AMOUNT</th> 
+                            <th> DEDUCTIONS</th>              <th> CGST NUMBER</th>                           <th> SGST NUMBER</th> 
+                            <th> IGST NUMBER</th>         <th> TDS NUMBER</th>                        <th>NET AMOUNT  </th>   
+                            <th> CHEQUE NUMBER </th>  <th> CHEQUE DATE </th> <th> UTR NUMBER </th>   <th> TDS DOCUMENT </th>  <th> ACTION </th>
+                        </tr>
+                        <tr>
+                            <th class="tableheader_color">(1)</th>
+                            <th class="tableheader_color">(2)</th>
+                            <th class="tableheader_color">(3)</th> 
+                            <th class="tableheader_color">(4)</th>
+                            <th class="tableheader_color">(5)</th>
+                            <th class="tableheader_color">(6)</th>
+                            <th class="tableheader_color">(7)</th>
+
+                            <th class="tableheader_color">(8)</th>
+                            <th class="tableheader_color">(9)</th>
+                            <th class="tableheader_color">(10)</th> 
+                            <th class="tableheader_color">(11)</th>
+                            <th class="tableheader_color">(12)</th>
+                            <th class="tableheader_color">(13)</th>
+                            <th class="tableheader_color">(14)</th>
+                            <th class="tableheader_color">(15)</th>
+                            <th class="tableheader_color">(16)</th>
+                            <th class="tableheader_color">(17)</th>
+                        </tr>
+
+
+
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let objd of Paymentdetailslist; let i = index">
+                            <td>{{i+1}}</td>
+                             
+                            <td>{{objd.PONUMBER}}</td>
+                            <td>{{objd.PODATE}}</td>
+                            <td>{{objd.INVOICENO}}</td>
+                            <td>{{objd.INVOICEDATE}} </td>
+                            <td>{{objd.GROSSINVOICEVAL }}</td>  
+                            <td>{{objd.DEDUCTION }}</td>
+                            <td>{{objd.CGST }}</td>                                                   
+                            <td>{{objd.SGST}}</td>
+                            <td>{{objd.IGST}}</td>
+                            <td>{{objd.TDS}}</td>
+                            <td>{{objd.NETPAYMENT}}</td>
+                            <td>{{objd.CHEQUENO}}</td>
+                            <td>{{objd.CHEQUEDATE}}</td>
+                            <td>{{objd.UTR}}</td>
+                            <td> 
+        
+                                <button class="btn btn-sm btn-info block"
+                                (click)="btnAllPdf(objd.UPLOADTDSDOC)">
+                                <i>VIEW</i></button> 
+                            </td>
+                             
+                            
+                             
+                            <td><input type="button" class="fa fa-trash btn btn-danger" (click)="DeletePAYID(objd.PAYID);" value="Remove"/></td>
+            
+        
+                        </tr>
+                    </tbody>
+                </table>
+        
+            </div>
+          
+         
+         </div>
+        
+
+    </div>
+</div>

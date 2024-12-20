@@ -1,0 +1,38 @@
+.dupload{
+   border: 1px solid #000;
+   height: 100px;
+   width: 100px;
+}
+
+.pdetails{
+    background-color: #00FFAB;  
+}
+.bdetails{
+    background-color: #00FFAB;
+
+}
+.udocument{
+    background-color: #00FFAB;
+  
+}
+.sdocument{
+    background-color: #00FFAB;
+   
+}
+
+.form-section{
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+   font-weight: bold;
+}
+
+.form-section img{
+  margin-right: .7rem;
+}
+
+.nav-topbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
